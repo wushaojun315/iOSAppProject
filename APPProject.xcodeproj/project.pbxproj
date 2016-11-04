@@ -63,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		051B3EC38CD3A77C51D1343C /* libPods-APPProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APPProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E4ADAE71DCC832000E34DF2 /* UsefulHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UsefulHeaders.h; sourceTree = "<group>"; };
 		5E87BE3B1DC9828A00C3AFE7 /* APPProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E87BE4A1DC9828A00C3AFE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E87BE4F1DC9828A00C3AFE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -219,6 +220,7 @@
 				5EABF19A1DCB147C00CFBCFA /* LaunchScreen.storyboard */,
 				5EABF19C1DCB147C00CFBCFA /* Main.storyboard */,
 				5EABF19E1DCB147C00CFBCFA /* main.m */,
+				5E4ADAE71DCC832000E34DF2 /* UsefulHeaders.h */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
