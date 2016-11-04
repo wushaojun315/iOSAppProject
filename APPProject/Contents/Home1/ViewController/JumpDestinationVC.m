@@ -19,6 +19,7 @@
     [super viewDidLoad];
     
     self.title = @"跳转页面";
+    self.view.backgroundColor = [UIColor whiteColor];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧按钮" style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick)];
 }

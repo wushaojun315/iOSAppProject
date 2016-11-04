@@ -77,13 +77,21 @@
 /******************************************************************************/
 // Debug模式下输出日志，release模式下不输出
 #ifdef DEBUG
-# define DLog(...) NSLog((@"\n*******************DEBUG Message*******************\n" \
-                                "[函数名]:\n      %s\n" \
-                                "[行  号]: \n      %d\n" \
-                                "[输出信息]: \n " \
-                                "     %@" \
-                                "\n===================================================\n"), \
-                                __FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__]);
+#define DLog(format, ...) \
+            do { \
+                fprintf(stderr, \
+                "*******************DEBUG Message*******************\n"\
+                "[文件信息]:                                         \n"\
+                "<%s - 第%d行>\n"\
+                "[方法名]:                                           \n"\
+                "%s\n"\
+                "[输出信息]:====>                                    \n"\
+                "%s\n"\
+                "\n===================================================\n", \
+                [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],\
+                __LINE__, __func__, \
+                [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String]);\
+            } while (0)
 #else
 # define DLog(...)
 #endif

@@ -119,7 +119,7 @@
 /** 这个函数存在的意义在于，如果将来要把AFNetworking换掉，只要修改这个函数的实现即可。 */
 - (NSInteger)callApiWithRequest:(NSURLRequest *)request success:(void (^)(ZZZAPIResponse *successResponse))successCallback failure:(void (^)(ZZZAPIResponse *failureResponse))failureCallback {
     
-    ZZZAPILog(@"%@", request.URL);
+    ZZZAPILog(@"请求地址:\n%@", request.URL);
     
     // 跑到这里的block的时候，就已经是主线程了。
     __block NSURLSessionDataTask *dataTask = nil;

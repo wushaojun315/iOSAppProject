@@ -84,10 +84,9 @@ static NSInteger kGuidePageNumber = 4;
 }
 
 #pragma mark - scrollView的代理方法，滑动超过一定距离之后也会直接跳转主页面
-#warning TODO: 这里好像有点问题！
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    // 滑动到最后面，再拉动30，就跳到主页
-    if (scrollView.contentOffset.x > SCREEN_WIDTH * kGuidePageNumber + 30) {
+    // 滑动到最后面，再拉动三分之一，就跳到主页
+    if (scrollView.contentOffset.x > SCREEN_WIDTH * (kGuidePageNumber - 1) + 0.3 * SCREEN_WIDTH) {
         [self goNormalRootVC];
     }
 }
@@ -117,7 +116,6 @@ static NSInteger kGuidePageNumber = 4;
                                                                 selectedImage:[UIImage imageNamed:selectedImageArray[index]]];
         //设置文字偏移
         [navigationController.tabBarItem setTitlePositionAdjustment:UIOffsetMake(2, -4)];
-        [navigationController.navigationBar setTranslucent:NO];
         
         [tabBarController addChildViewController:navigationController];
     }

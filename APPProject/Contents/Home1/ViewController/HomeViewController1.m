@@ -21,7 +21,7 @@
     self.navigationItem.title = @"第二页面";
     self.view.backgroundColor = [UIColor greenColor];
     
-    UIButton *testButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 54)];
+    UIButton *testButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 150, 54)];
     testButton.center = self.view.center;
     testButton.backgroundColor = [UIColor redColor];
     [testButton setTitle:@"测试跳转按钮" forState:UIControlStateNormal];

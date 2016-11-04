@@ -11,10 +11,10 @@
 @implementation AppDelegate (LifeHandler)
 
 // 应用到后台
--(void)applicationDidEnterBackground:(UIApplication *)application{
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-}
+//-(void)applicationDidEnterBackground:(UIApplication *)application{
+//    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:1];
+//    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+//}
 
 // 远程推送错误
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -45,33 +45,33 @@
 
 // 接受到远程推送
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_7_0
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-{
+//- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+//{
 //    [VTJpushTools handleRemoteNotification:userInfo completion:completionHandler];
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"GETNotifation" object:nil];
 //    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"GETNotifation"];
 //    [[NSUserDefaults standardUserDefaults] synchronize];
-    
+//    
 //    NSString *flag = [userInfo valueForKey:@"flag"];
 //    NSString *url = [userInfo valueForKey:@"url"];
 //    RDVTabBarController *tabbar = (RDVTabBarController *)self.viewController;
-    
-    if (application.applicationState == UIApplicationStateActive) {
-        
-    } else {
-        
+//    
+//    if (application.applicationState == UIApplicationStateActive) {
+//        
+//    } else {
+//        
 //        [JPUSHService handleRemoteNotification:userInfo];
-    }
-}
+//    }
+//}
 #endif
 
 // iOS 6.0收到通知
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    
-//    [VTJpushTools handleRemoteNotification:userInfo completion:nil];
-    application.applicationIconBadgeNumber = 0;
-    
-}
+//- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+//    
+////    [VTJpushTools handleRemoteNotification:userInfo completion:nil];
+//    application.applicationIconBadgeNumber = 0;
+//    
+//}
 
 #pragma mark - App挑选回调
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url

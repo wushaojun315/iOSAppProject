@@ -18,13 +18,17 @@
 // Debug模式下输出日志，release模式下不输出
 #ifdef DEBUG
 
-# define ZZZAPILog(...) \
-            NSLog((@"\n*******************DEBUG Message*******************\n" \
-                    "[文件信息]:类：ZZZNetworkingManager，第120行的函数\n" \
-                    "[输出信息]: \n " \
-                    "     %@" \
-                    "\n===================================================\n"), \
-                    [NSString stringWithFormat:__VA_ARGS__]);
+# define ZZZAPILog(format, ...) \
+            do { \
+                fprintf(stderr, \
+                "*******************DEBUG Message*******************\n"\
+                "[文件信息]:\n"\
+                "文件ZZZNetworkingManager.m，发网络请求的函数--120行\n"\
+                "[输出信息]:====>                                    \n"\
+                "%s\n"\
+                "\n===================================================\n", \
+                [[NSString stringWithFormat:format, ##__VA_ARGS__] UTF8String]);\
+            } while (0)
 
 #else
 

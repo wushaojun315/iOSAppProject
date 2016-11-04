@@ -32,10 +32,11 @@
 
 - (UITextView *)resultTextView {
     if (_resultTextView == nil) {
-        UITextView *tempTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 300, 400)];
+        UITextView *tempTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
         _resultTextView = tempTextView;
         [self.view addSubview:tempTextView];
-        _resultTextView.center = self.view.center;
+        CGPoint viewCenter = CGPointMake(self.view.center.x, self.view.center.y - STATUS_BAR_HEIGHT - NAVIGATION_BAR_HEIGHT);
+        _resultTextView.center = viewCenter;
         _resultTextView.backgroundColor = [UIColor whiteColor];
         _resultTextView.text = @"点击按钮发送请求后，展示结果";
     }
@@ -50,7 +51,7 @@
     [self.view setBackgroundColor:[UIColor yellowColor]];
     
     //下面添加其他UI控件
-    UIButton *testButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    UIButton *testButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
 //    testButton.center = self.view.center;
     testButton.backgroundColor = [UIColor greenColor];
     [testButton setTitle:@"测试按钮" forState:UIControlStateNormal];
@@ -66,10 +67,9 @@
 
 #pragma mark - 方法
 - (void)testButtonFounction:(UIButton *)button {
-    // 请求
+    
     self.resultTextView.text = @"sdfsdfdsf";
     [self.exampleManager requestDataFromAPI];
-    DLogAlert(@"请求成功！");
 }
 
 #pragma mark - ZZZAPIParamSourceProtocol代理方法

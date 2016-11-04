@@ -37,7 +37,11 @@
 }
 
 - (void)testButtonFounction:(UIButton *)button {
-    
+    // 测试宏定义
+    int i = 100;
+    DLog(@"测试DLog使用==输出数字：%d", i);
+    DLogAlert(@"请求成功！");
+    // 测试pod功能，以及UIAlertController是否能显示正常
     UIView *vv = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 200, 80)];
     vv.backgroundColor = [UIColor greenColor];
     
@@ -47,7 +51,7 @@
     containedLabel.backgroundColor = [UIColor yellowColor];
     [vv addSubview:containedLabel];
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示框" message:@"提示框信息" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示框" message:@"测试UIAlertController是否能显示正常，因为以前有项目模板，这个无法显示标题！" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self.view showToast:vv];
