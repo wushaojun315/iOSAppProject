@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FollowViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="8nG-ru-Yy8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnf-vL-awP">
+                    <string key="text">请您登陆注册
+在storyboard和xib中使用option+enter换行，使用\n是不可以换行的</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appIcon512.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yjb-Yk-qMz">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="50F-Gb-FUh"/>
+                        <constraint firstAttribute="width" constant="40" id="djz-II-nG3"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K9-Vs-oBO">
+                    <state key="normal" title="立即登陆注册" backgroundImage="friendsTrend_login.png">
+                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="loginButtonAction:" destination="-1" eventType="touchUpInside" id="o6Y-sR-Vmi"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="0K9-Vs-oBO" secondAttribute="trailing" constant="50" id="0Zx-bn-Xbb"/>
+                <constraint firstItem="0K9-Vs-oBO" firstAttribute="top" secondItem="Fnf-vL-awP" secondAttribute="bottom" constant="40" id="GQB-l9-x17"/>
+                <constraint firstItem="Yjb-Yk-qMz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="J2x-0R-L4b"/>
+                <constraint firstItem="Fnf-vL-awP" firstAttribute="top" secondItem="Yjb-Yk-qMz" secondAttribute="bottom" constant="40" id="d7b-Ui-SZh"/>
+                <constraint firstItem="Fnf-vL-awP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="fIw-rp-09j"/>
+                <constraint firstItem="Fnf-vL-awP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="lhF-Th-EIU"/>
+                <constraint firstAttribute="trailing" secondItem="Fnf-vL-awP" secondAttribute="trailing" constant="50" id="mIi-Sf-OCw"/>
+                <constraint firstItem="0K9-Vs-oBO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="qFL-lQ-hsE"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="appIcon512.png" width="512" height="512"/>
+        <image name="friendsTrend_login.png" width="243" height="48"/>
+    </resources>
+</document>

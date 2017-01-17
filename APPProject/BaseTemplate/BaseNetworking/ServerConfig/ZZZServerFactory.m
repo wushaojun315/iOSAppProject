@@ -9,7 +9,7 @@
 #import "ZZZServerFactory.h"
 
 #import "ZZZNetworkConfigurer.h"
-#import "ZZZExampleServer.h"
+//#import "ZZZExampleServer.h"
 
 @interface ZZZServerFactory ()
 
@@ -53,7 +53,7 @@
 - (ZZZBaseServer *)createServerWithIdentifier:(NSString *)identifier {
     
     if ([identifier isEqualToString:kAPIServerExampleServerIdentifier]) {
-        return [[ZZZExampleServer alloc] init];
+//        return [[ZZZExampleServer alloc] init];
     }
     return nil;
 }

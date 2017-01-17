@@ -8,11 +8,10 @@
 
 #import "AppDelegate+RootViewController.h"
 #import "CommonMacros.h"
-#import "HomeViewController0.h"
-#import "HomeViewController1.h"
-#import "HomeViewController2.h"
 #import "ZZZTabBarController.h"
 #import "ZZZNavigationController.h"
+
+#import "LoginRegisterViewController.h"
 
 static NSString *kIsAppFirstOpenKey = @"isAppFirstOpen";
 static NSInteger kGuidePageNumber = 4;
@@ -25,16 +24,16 @@ static NSInteger kGuidePageNumber = 4;
 
 - (void)setUpRootViewController {
     // 如果对应能取到值，说明不是第一次使用app
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:kIsAppFirstOpenKey]) {
+//    if ([[NSUserDefaults standardUserDefaults] objectForKey:kIsAppFirstOpenKey]) {
         // 不是第一次打开，直接进入主页面或者登陆
         [self setNormalRootVC];
-    } else {
-        // 第一次打开，可能有什么引导页什么的
-        UIViewController *loadingGuidePageVC = [[UIViewController alloc] init];
-        self.window.rootViewController = loadingGuidePageVC;
-        // 往这个页面里加引导图片
-        [self setGuidePage];
-    }
+//    } else {
+//        // 第一次打开，可能有什么引导页什么的
+//        UIViewController *loadingGuidePageVC = [[UIViewController alloc] init];
+//        self.window.rootViewController = loadingGuidePageVC;
+//        // 往这个页面里加引导图片
+//        [self setGuidePage];
+//    }
 }
 
 #pragma mark - 第一次进入应用，打开引导页
@@ -94,33 +93,35 @@ static NSInteger kGuidePageNumber = 4;
 #pragma mark - 设置真正的rootViewController
 - (void)setNormalRootVC {
     
-    NSArray *nameArray = @[@"首页", @"辅助功能", @"我的"];
+//    NSArray *nameArray = @[@"首页", @"辅助功能", @"我的"];
+//    
+//    NSArray *imageArray = @[@"homeOne_unselected", @"homeTwo_unselected", @"homeTxree_unselected"];
+//    
+//    NSArray *selectedImageArray = @[@"homeOne_selected", @"homeTwo_selected", @"homeTxree_selected"];
+//    
+//    NSArray *viewControllerArray = @[[[HomeViewController0 alloc] init],
+//                                     [[HomeViewController1 alloc] init],
+//                                     [[HomeViewController2 alloc] init]];
+//    
+//    ZZZTabBarController *tabBarController = [[ZZZTabBarController alloc] init];
+//    
+//    for (int index = 0; index < nameArray.count; index ++) {
+//        
+//        UIViewController *viewController = viewControllerArray[index];
+//        ZZZNavigationController *navigationController = [[ZZZNavigationController alloc] initWithRootViewController:viewController];
+//        
+//        navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nameArray[index]
+//                                                                        image:[UIImage imageNamed:imageArray[index]]
+//                                                                selectedImage:[UIImage imageNamed:selectedImageArray[index]]];
+//        //设置文字偏移
+//        [navigationController.tabBarItem setTitlePositionAdjustment:UIOffsetMake(2, -4)];
+//        
+//        [tabBarController addChildViewController:navigationController];
+//    }
     
-    NSArray *imageArray = @[@"homeOne_unselected", @"homeTwo_unselected", @"homeTxree_unselected"];
+    LoginRegisterViewController *loginRegisterController = [[LoginRegisterViewController alloc] init];
     
-    NSArray *selectedImageArray = @[@"homeOne_selected", @"homeTwo_selected", @"homeTxree_selected"];
-    
-    NSArray *viewControllerArray = @[[[HomeViewController0 alloc] init],
-                                     [[HomeViewController1 alloc] init],
-                                     [[HomeViewController2 alloc] init]];
-    
-    ZZZTabBarController *tabBarController = [[ZZZTabBarController alloc] init];
-    
-    for (int index = 0; index < nameArray.count; index ++) {
-        
-        UIViewController *viewController = viewControllerArray[index];
-        ZZZNavigationController *navigationController = [[ZZZNavigationController alloc] initWithRootViewController:viewController];
-        
-        navigationController.tabBarItem = [[UITabBarItem alloc] initWithTitle:nameArray[index]
-                                                                        image:[UIImage imageNamed:imageArray[index]]
-                                                                selectedImage:[UIImage imageNamed:selectedImageArray[index]]];
-        //设置文字偏移
-        [navigationController.tabBarItem setTitlePositionAdjustment:UIOffsetMake(2, -4)];
-        
-        [tabBarController addChildViewController:navigationController];
-    }
-    
-    [self.window setRootViewController:tabBarController];
+    [self.window setRootViewController:loginRegisterController];
 }
 
 @end
